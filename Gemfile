@@ -6,6 +6,10 @@ gem 'rails', '4.1.4'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
+gem 'cancancan', '~> 1.9'
+gem 'rolify'
+gem 'carrierwave'
+gem 'cloudinary'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

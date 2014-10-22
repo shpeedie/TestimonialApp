@@ -7,7 +7,7 @@
 
 <p>
   <strong>Profile pic:</strong>
-  <%= @user_profile.profile_pic %>
+  <%= image_tag(@user_profile.profile_pic_url) %>
 </p>
 
 <%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |

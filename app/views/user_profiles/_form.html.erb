@@ -1,4 +1,4 @@
-<%= form_for(@user_profile) do |f| %>
+<%= simple_form_for(@user_profile) do |f| %>
   <% if @user_profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_profile.errors.count, "error") %> prohibited this user_profile from being saved:</h2>
@@ -11,13 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.input :name %>
   </div>
-  <div class="field">
-    <%= f.label :profile_pic %><br>
-    <%= f.text_field :profile_pic %>
+  <% unless @user_profile.profile_pic.nil? %>
+  <p>Current image:</p>
+    <%= image_tag(@user_profile.profile_pic_url(:thumbnail)) %>
+  <% end %>
+  <div class="form-group">
+    <%= f.input :profile_pic, as: :file %>
   </div>
   <div class="actions">
     <%= f.submit %>
