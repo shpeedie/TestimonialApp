@@ -1,0 +1,13 @@
+<%= simple_form_for(@testimonial) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :star_rating %>
+    <%= f.input :body, label: 'Your review', input_html: { class: 'form-control', rows: 5} %>
+  </div>
+  
+
+  <div class="form-group">
+    <%= f.button :submit %>
+  </div>
+<% end %>
