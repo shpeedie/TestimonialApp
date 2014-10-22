@@ -25,7 +25,8 @@ class BusinessProfilesController < ApplicationController
   # POST /business_profiles.json
   def create
     @business_profile = BusinessProfile.new(business_profile_params)
-
+    @business_profile.users << current_user
+    
     respond_to do |format|
       if @business_profile.save
         format.html { redirect_to @business_profile, notice: 'Business profile was successfully created.' }
