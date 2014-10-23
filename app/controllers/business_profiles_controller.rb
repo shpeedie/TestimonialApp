@@ -10,6 +10,7 @@ class BusinessProfilesController < ApplicationController
   # GET /business_profiles/1
   # GET /business_profiles/1.json
   def show
+    @testimonial = Testimonial.new
   end
 
   # GET /business_profiles/new
@@ -26,7 +27,7 @@ class BusinessProfilesController < ApplicationController
   def create
     @business_profile = BusinessProfile.new(business_profile_params)
     @business_profile.users << current_user
-    
+
     respond_to do |format|
       if @business_profile.save
         format.html { redirect_to @business_profile, notice: 'Business profile was successfully created.' }
